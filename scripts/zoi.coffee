@@ -222,6 +222,6 @@ module.exports = (robot) ->
         zoi = new Zoi(robot.brain)
         word = msg.match[1]
         if url = zoi.find(word)
-            msg.send url
+            msg.send url + '#' + Date.now();
         else
-            msg.send zoi.random()
+            msg.send zoi.random() + '#' + Date.now();
